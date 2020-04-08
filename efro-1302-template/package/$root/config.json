@@ -1,5 +1,4 @@
 {
-	"script": "scripts/ant.xml",
 	"targets": {
 		"onLoad": "onLoad",
 		"onGenerate": "onGenerate"
