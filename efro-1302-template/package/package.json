@@ -1,0 +1,12 @@
+{
+  "name": "efro.1320.fhir.template",
+  "version": "0.0.1",
+  "type": "fhir.template",
+  "license": "CC0-1.0",
+  "description": "Dedicated local template for EFRO 1302 project",
+  "author": "http://hl7.org/fhir",
+	"base":  "fhir.base.template",
+  "dependencies": {
+    "fhir.base.template": "0.1.0"
+  }
+}
