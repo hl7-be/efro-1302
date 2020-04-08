@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
-  <id value="example.fhir.uv.myig"/>
-<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
-    <valueString value="resources-spreadsheet.xml"/>
-  </extension>-->
-  <url value="http://somewhere.org/fhir/example.fhir.uv.myig"/>
+  <id value="be.fhir.be.efro1302"/>
+  <url value="http://hl7belgium.org/fhir/efro-1302"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.2.0"/>
   <name value="EFRO1302"/>
-  <title value="EFRO 1302 &lt;br/&gt;Digitale Zorg ondersteuning in Limburg voor Vlaanderen"/>
+  <title value="EFRO 1302 Digitale Zorg ondersteuning"/>
   <status value="draft"/>
   <experimental value="false"/>
   <publisher value="IMEC"/>
