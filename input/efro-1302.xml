@@ -16,7 +16,7 @@
       <value value="http://somewhere.org"/>
     </telecom>
   </contact>
-  <description value="A brief description of what MyIG is about (probably the same text as in your readme)"/>
+  <description value="EFRO 1302 : Digitale Zorg ondersteuning in de praktijk in Limburg als hefboom voor Vlaanderen"/>
   <jurisdiction>
     <!-- This will drive SNOMED release used -->
     <coding>
