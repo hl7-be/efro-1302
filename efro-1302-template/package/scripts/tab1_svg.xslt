@@ -27,7 +27,7 @@
 																<xsl:value-of select="/fhir:ExampleScenario/fhir:process/fhir:postConditions/@value" />
 															</p>
 															<p />
-
+<!-- @Lloyd: how do I refer here not to "scenario-allergy" but to {{filename}}.svg where filename is the actual file that is being processed ? -->
 															<xsl:value-of select="unparsed-text('../../input/images/scenario-allergy.svg')" disable-output-escaping="yes" />
 
 														</div>
