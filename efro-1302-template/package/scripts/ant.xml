@@ -98,12 +98,12 @@
   <target name="createExampleScenarioPage" depends="renderDiagram">
 <!-- @Lloyd: what should I have as destdir for the fragment? here i generate one single segment or 3 different segments - depending on what may be the best for the layout-->
   
-     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios" extension="-full.html" style="${ig.scripts}/full_template_simple_svg.xslt"/>
-     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios" extension="-sequence.xhtml" style="${ig.scripts}/tab1_svg.xslt"/>
-     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios" extension="-description.xhtml" style="${ig.scripts}/tab2.xslt"/>
-     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios" extension="-resources.xhtml" style="${ig.scripts}/tab3.xslt"/>
+     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios-output" extension="-full.html" style="${ig.scripts}/full_template_simple_svg.xslt"/>
+<!--     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios-output" extension="-sequence.xhtml" style="${ig.scripts}/tab1_svg.xslt"/>
+     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios-output" extension="-description.xhtml" style="${ig.scripts}/tab2.xslt"/>
+     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios-output" extension="-resources.xhtml" style="${ig.scripts}/tab3.xslt"/>
+-->
   </target>
-
   <target name="prepareDiagramSource">
 <!-- @Lloyd: what should I have as destdir for the temp txt files?-->
      <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${folder.input}/scenarios/diagramsources" extension=".txt" style="${ig.scripts}/diagram.xslt"/>
@@ -146,9 +146,9 @@
       </filterchain>
     </concat>
 
-    <appendArtifacts2 files="input/scenarios/scenario-mma-full.html"/>
+    <appendArtifacts2 files="input/scenarios-output/scenario-mma-full.html"/>
 	<echo message="Adding file"/>
-	<echo message="${ig.root}/input/scenarios/scenario-mma-full.html"/>
+	<echo message="${ig.root}/input/scenarios-output/scenario-mma-full.html"/>
   </target>
   <scriptdef name="appendArtifacts2" language="javascript" description="Adds additional values to the to the onGenerate.files list">
     <attribute name="files"/>

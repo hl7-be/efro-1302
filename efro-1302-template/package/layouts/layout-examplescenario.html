@@ -4,6 +4,8 @@
 <div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
 
+<!-- Option 1: Separate html per tab -->
+<!--
   <ul class="nav nav-tabs">
     <li class="active">
       <a href="{{[id]}}-sequence.html">Sequence</a>
@@ -15,11 +17,17 @@
       <a href="{{[id]}}-resources.html">Resources</a>
     </li>
   </ul>
+-->
   
-
+  
+<!-- Option 2: Single html with the tabs already in  -->
 <!--
 {% include {{[id]}}-full.html %}
 -->
+
+
+<!-- Option 0: hardcoding file name...-->
+{% include scenario-allergy-full.html %}
 
  
   
