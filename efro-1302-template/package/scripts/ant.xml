@@ -146,13 +146,19 @@
       </filterchain>
     </concat>
 
-    <appendArtifacts2 files="input/scenarios-output/scenario-mma-full.html"/>
+
+    <appendArtifacts files="input/scenarios-output/scenario-mma-full.html"/>
+
 	<echo message="Adding file"/>
-	<echo message="${ig.root}/input/scenarios-output/scenario-mma-full.html"/>
+	<echo message="input/scenarios-output/scenario-mma-full.html"/>
   </target>
-  <scriptdef name="appendArtifacts2" language="javascript" description="Adds additional values to the to the onGenerate.files list">
+  <scriptdef name="appendArtifacts" language="javascript" description="Adds additional values to the to the onGenerate.files list">
     <attribute name="files"/>
-    self.project.setProperty("onGenerate.files", self.project.getProperty("onGenerate.files").concat(";").concat(attributes.get("files")));
+<!--    self.project.setProperty("onGenerate.files", self.project.getProperty("onGenerate.files").concat(";").concat(attributes.get("files")));
+	-->
+    self.project.setProperty("onGenerate.files", self.project.getProperty("onGenerate.files").concat(";input/scenarios-output/scenario-mma-full.html"));
+
+
   </scriptdef>
 
 
