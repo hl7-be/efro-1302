@@ -1,8 +1,0 @@
-{
-  "defaults": {
-    "ExampleScenario": {
-      "template-base": "template/layouts/layout-examplescenario.html",
-      "base": "{{[type]}}-{{[id]}}.html"
-    }
-  }
-}

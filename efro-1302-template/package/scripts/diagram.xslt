@@ -55,7 +55,7 @@ group#A9CCEF #A9CCEF <xsl:value-of select="fhir:title/@value"/><xsl:text>&#13;&#
 
 
 <xsl:template match="fhir:step/fhir:alternative">
-'<xsl:value-of select="fhir:name/@value"/> 
+alt <xsl:value-of select="fhir:name/@value"/> 
 <xsl:apply-templates select="fhir:option"/>
 <xsl:text>&#13;&#10;</xsl:text>
 <xsl:apply-templates select="./fhir:step"/>end
