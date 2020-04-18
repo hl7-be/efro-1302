@@ -1,4 +1,5 @@
 {
+	"script": "scripts/ant-be.xml",
   "defaults": {
     "ExampleScenario": {
       "template-base": "template/layouts/layout-examplescenario.html",
