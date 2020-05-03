@@ -11,7 +11,7 @@
     <mkdir dir="${dir.scenarios-input}"/>
     <mkdir dir="${dir.scenarios-includes}"/>
     <mkdir dir="${dir.scenarios-images}"/>
-    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-input}" extension=".txt" style="${ig.scripts}/diagram.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-input}" extension=".txt" style="${ig.scripts}/diagram.xslt"/>
   </target>
   <target name="renderDiagram" depends="prepareDiagramSource">
     <java jar="${dir.lib}/plantuml.jar" fork="true">
@@ -20,9 +20,9 @@
     </java>
   </target>
   <target name="createExampleScenarioPage" depends="renderDiagram" extensionOf="onGenerate.extend">
-    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension=".html" style="${ig.scripts}/sequence.xslt"/>
-    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-description.html" style="${ig.scripts}/description.xslt"/>
-    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-resources.html" style="${ig.scripts}/resources.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension=".html" style="${ig.scripts}/sequence.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension="-description.html" style="${ig.scripts}/description.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension="-resources.html" style="${ig.scripts}/resources.xslt"/>
     <fileset id="onGenerate.scenario.id" dir="${ig.root}">
       <include name="template/scenarios/images/*.svg"/>
       <include name="template/scenarios/includes/*.html"/>
