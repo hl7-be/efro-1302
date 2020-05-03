@@ -30,7 +30,7 @@
     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-full.html" style="${ig.scripts}/full_template_simple_svg.xslt"/>
 -->
 
-    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-sequence.html" style="${ig.scripts}/sequence.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension=".html" style="${ig.scripts}/sequence.xslt"/>
 
     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-description.html" style="${ig.scripts}/description.xslt"/>
 
