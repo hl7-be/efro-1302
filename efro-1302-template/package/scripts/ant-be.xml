@@ -25,8 +25,21 @@
   <target name="createExampleScenarioPage" depends="renderDiagram" extensionOf="onGenerate.extend">
 <!--    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-full.html" style="${ig.scripts}/full_template_simple_svg.xslt"/> 
 -->
+
+<!--
     <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-full.html" style="${ig.scripts}/full_template_simple_svg.xslt"/>
+-->
+
+    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-sequence.html" style="${ig.scripts}/sequence.xslt"/>
+
+    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-description.html" style="${ig.scripts}/description.xslt"/>
+
+    <xslt basedir="${dir.input}/scenarios" includes="scenario*.xml" destdir="${dir.scenarios-includes}" extension="-resources.html" style="${ig.scripts}/resources.xslt"/>
+
+
+
     <fileset id="onGenerate.scenario.id" dir="${ig.root}">
+
 
 <!--
       <include name="template/scenarios/images/*.svg"/>
