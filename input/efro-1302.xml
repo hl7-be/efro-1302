@@ -39,17 +39,9 @@
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/be-communication"/>
+        <reference value="ExampleScenario/scenario-allergy"/>
       </reference>
       <description value="Overriding description because we can"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Communication/be.comm1"/>
-      </reference>
-      <name value="Simple communication example"/>
-      <description value="A simple example showing how examples are defined and referenced"/>
-      <exampleCanonical value="https://www.hl7belgium.org/fhir/StructureDefinition/be-communication"/>
     </resource>
 <!--    <resource>
       <reference>
