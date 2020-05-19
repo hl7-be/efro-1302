@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "wendy",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "13632356"
+    }
+  ],
+  "name": [
+    {
+      "family": "Welzijnswerker",
+      "given": [
+        "Wendy"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "birthDate": "1987-01-27"
+}

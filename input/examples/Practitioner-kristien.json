@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "kristien",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "10432356"
+    }
+  ],
+  "name": [
+    {
+      "family": "Kinesist",
+      "given": [
+        "Kristien"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "birthDate": "1980-05-14"
+}

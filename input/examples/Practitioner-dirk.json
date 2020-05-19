@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "dirk",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "10432356"
+    }
+  ],
+  "name": [
+    {
+      "family": "Dietist",
+      "given": [
+        "Dirk"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "male",
+  "birthDate": "1975-04-27"
+}

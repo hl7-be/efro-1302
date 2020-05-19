@@ -1,0 +1,260 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "be-careplan",
+  "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-careplan",
+  "version": "0.1.0",
+  "name": "BECarePlan",
+  "title": "BE Care Plan",
+  "status": "active",
+  "description": "Defines constraints and extensions on the patient resource for \nthe minimal set of data to query and retrieve patient demographic information.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CarePlan",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.identifier",
+        "path": "CarePlan.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.instantiatesCanonical",
+        "path": "CarePlan.instantiatesCanonical",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.instantiatesUri",
+        "path": "CarePlan.instantiatesUri",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.basedOn",
+        "path": "CarePlan.basedOn",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "reference.type"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.basedOn:basedOnServiceRequest",
+        "path": "CarePlan.basedOn",
+        "sliceName": "basedOnServiceRequest",
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.basedOn:basedOnServiceRequest.identifier.type.coding.code",
+        "path": "CarePlan.basedOn.identifier.type.coding.code",
+        "patternCode": "ServiceRequest"
+      },
+      {
+        "id": "CarePlan.replaces",
+        "path": "CarePlan.replaces",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.partOf",
+        "path": "CarePlan.partOf",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.category",
+        "path": "CarePlan.category",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.title",
+        "path": "CarePlan.title",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.description",
+        "path": "CarePlan.description",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.encounter",
+        "path": "CarePlan.encounter",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.period",
+        "path": "CarePlan.period",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.created",
+        "path": "CarePlan.created",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.author",
+        "path": "CarePlan.author",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.careTeam",
+        "path": "CarePlan.careTeam",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.supportingInfo",
+        "path": "CarePlan.supportingInfo",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "identifier.type"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.supportingInfo:BelRaiHomeCare",
+        "path": "CarePlan.supportingInfo",
+        "sliceName": "BelRaiHomeCare",
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.supportingInfo:BelRaiHomeCare.identifier.type.coding.code",
+        "path": "CarePlan.supportingInfo.identifier.type.coding.code",
+        "patternCode": "74196-7"
+      },
+      {
+        "id": "CarePlan.supportingInfo:BelRaiHomeCare.identifier.system",
+        "path": "CarePlan.supportingInfo.identifier.system",
+        "patternUri": "http://belrai.be"
+      },
+      {
+        "id": "CarePlan.goal",
+        "path": "CarePlan.goal",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.outcomeCodeableConcept",
+        "path": "CarePlan.activity.outcomeCodeableConcept",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.progress",
+        "path": "CarePlan.activity.progress",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.kind",
+        "path": "CarePlan.activity.detail.kind",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.instantiatesCanonical",
+        "path": "CarePlan.activity.detail.instantiatesCanonical",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.instantiatesUri",
+        "path": "CarePlan.activity.detail.instantiatesUri",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.code",
+        "path": "CarePlan.activity.detail.code",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.status",
+        "path": "CarePlan.activity.detail.status",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.statusReason",
+        "path": "CarePlan.activity.detail.statusReason",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.doNotPerform",
+        "path": "CarePlan.activity.detail.doNotPerform",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.scheduled[x]",
+        "path": "CarePlan.activity.detail.scheduled[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.location",
+        "path": "CarePlan.activity.detail.location",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.performer",
+        "path": "CarePlan.activity.detail.performer",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.detail.description",
+        "path": "CarePlan.activity.detail.description",
+        "mustSupport": true
+      }
+    ]
+  }
+}

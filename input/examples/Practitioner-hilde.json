@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "hilde",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "10432356"
+    }
+  ],
+  "name": [
+    {
+      "family": "Huisarts",
+      "given": [
+        "Hilde"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "female",
+  "birthDate": "1967-06-22"
+}

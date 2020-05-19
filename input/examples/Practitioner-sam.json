@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "sam",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "12345422"
+    }
+  ],
+  "name": [
+    {
+      "family": "Specialist",
+      "given": [
+        "Sam"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "male",
+  "birthDate": "1969-05-04"
+}

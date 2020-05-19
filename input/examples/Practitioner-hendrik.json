@@ -1,0 +1,21 @@
+{
+  "resourceType": "Practitioner",
+  "id": "hendrik",
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+      "value": "1031902356"
+    }
+  ],
+  "name": [
+    {
+      "family": "Huisarts",
+      "given": [
+        "Hendrik"
+      ]
+    }
+  ],
+  "active": true,
+  "gender": "male",
+  "birthDate": "1977-09-01"
+}
