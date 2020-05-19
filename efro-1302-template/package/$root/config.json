@@ -3,7 +3,7 @@
 	"defaults": {
 			"ExampleScenario": {
 			"template-base": "template/layouts/layout-examplescenario.html",
-		    "template-desc": "template/layouts/layout-examplescenario-description.html",
+		    "template-description": "template/layouts/layout-examplescenario-description.html",
 		    "template-resources": "template/layouts/layout-examplescenario-resources.html",
 			"base": "{{[type]}}-{{[id]}}.html",
 		    "desc": "{{[type]}}-{{[id]}}-description.html",
