@@ -1,0 +1,246 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "be-fhir",
+  "url": "https://www.ehealth.fgov.be/standards/fhir/ImplementationGuide/be-fhir",
+  "version": "0.1.0",
+  "name": "ImplementationGuide",
+  "title": "Implementation Guide",
+  "status": "active",
+  "publisher": "HL7 Belgium",
+  "description": "An example of how FSH can be used to create an IG about fish",
+  "packageId": "be-fhir",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-careplan"
+        },
+        "name": "BE Care Plan",
+        "description": "Defines constraints and extensions on the patient resource for \nthe minimal set of data to query and retrieve patient demographic information.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-patient"
+        },
+        "name": "FSH Patient",
+        "description": "Defines constraints and extensions on the patient resource for \nthe minimal set of data to query and retrieve patient demographic information.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-addiction"
+        },
+        "name": "BE Addiction",
+        "description": "Defines constraints and extensions on the patient resource for \nthe minimal set of data to query and retrieve patient demographic information.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/be-careteam"
+        },
+        "name": "BE Care Team",
+        "description": "Defines constraints and extensions on the patient resource for \nthe minimal set of data to query and retrieve patient demographic information.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/Pascale"
+        },
+        "name": "Pascale",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/andre"
+        },
+        "name": "Apotheker André",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/annie"
+        },
+        "name": "Apotheker Annie",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/diana"
+        },
+        "name": "Dietist Diana",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/dirk"
+        },
+        "name": "Dietist Dirk",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/hendrik"
+        },
+        "name": "GP Hendrik",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/hilde"
+        },
+        "name": "GP Hilde",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/karel"
+        },
+        "name": "Kinesist Karel",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/kristien"
+        },
+        "name": "Kinesist Kristien",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patricia"
+        },
+        "name": "patricia",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/paul"
+        },
+        "name": "Patient Paul",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/peter"
+        },
+        "name": "peter",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+      },
+      {
+        "reference": {
+          "reference": "Patient/pia"
+        },
+        "name": "Patient Pia",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+      },
+      {
+        "reference": {
+          "reference": "Appointment/pia-001-v0"
+        },
+        "name": "Pia appointment 1",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/pia-depression"
+        },
+        "name": "Condition - Pia is depressed",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/pia-diabetes"
+        },
+        "name": "Condition - Pia has diabetes",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/pia-loneliness"
+        },
+        "name": "Condition - Pia is lonely",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/pia-postop"
+        },
+        "name": "Condition - Pia has had surgery",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/sam"
+        },
+        "name": "Specialist Sam",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/sara"
+        },
+        "name": "Specialist Sara",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/veerle"
+        },
+        "name": "Nurse Veerle",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/victor"
+        },
+        "name": "Nurse Victor",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/wendy"
+        },
+        "name": "Welzijnswerker Wendy",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/willy"
+        },
+        "name": "Welzijnswerker Willy",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2020+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "CI Build"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "false"
+      }
+    ]
+  }
+}
