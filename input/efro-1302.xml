@@ -41,6 +41,7 @@
       <reference>
         <reference value="ExampleScenario/scenario-allergy"/>
       </reference>
+      <name value="Example Scenario - Allergy / Intolerance"/>
       <description value="Overriding description because we can"/>
     </resource>
 <!--    <resource>
