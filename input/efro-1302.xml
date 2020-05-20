@@ -71,6 +71,12 @@
         <title value="Detailed Specification"/>
         <generation value="markdown"/>
       </page>
+
+      <page>
+        <nameUrl value="scenario-communication.html"/>
+        <title value="Scenario 1"/>
+        <generation value="html"/>
+      </page>
       <page>
         <nameUrl value="downloads.html"/>
         <title value="Useful Downloads"/>
