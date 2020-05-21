@@ -15,24 +15,15 @@
     <li>
       <a href="{{[type]}}-{{[id]}}-resources.html">Resources</a>
     </li>
-<!--
--->
   </ul>
-  This would be a nice table with some text before...
-<!-- @Lloyd: how do I refer here not to "scenario-allergy" but to {{filename}}.svg where filename is the actual file that is being processed ? -->
-<!--
--->
-	</div>
 
+  <a name="root"> </a>
+  <h2 id="root">ExampleScenario: {{[title]}}</h2>
 
-<!-- Option 0: hardcoding file name...
--->
-
- 
- 
+  {%include ExampleScenario-{{[id]}}.xhtml%} 
+  <br/>
+  <img alt="Scenario diagram" src="ExampleScenario-{{[id]}}.svg"/>
   
   <a name="root"> </a>
 {% assign includetabscripts = 'true' %}
 {% include fragment-pageend.html %}
-
-
