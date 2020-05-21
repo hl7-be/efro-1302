@@ -5,75 +5,69 @@
 	<xsl:template match="/">
 
 
-														<div id="details" class="tab-pane fade">
-															<h3>
-																<a name="details" />
-																Details
-															</h3>
-															<div>
-																<table class="cols">
-																	<tr>
-																		<td>
-																			Publisher: (link?)
-																			<xsl:value-of select="/fhir:ExampleScenario/fhir:publisher/@value" />
-																		</td>
-																		<td>
-																			<a href="versions.html#maturity">Status</a>
-																			:
-																			<xsl:value-of select="/fhir:ExampleScenario/fhir:status/@value" />
-																		</td>
-																		<td>
-																			<a href="versions.html#maturity">Experimental</a>
-																			:
-																			<xsl:value-of select="/fhir:ExampleScenario/fhir:experimental/@value" />
-																		</td>
-																		<td>
-																			<a href="versions.html#maturity">Copyright</a>
-																			:
-																			<xsl:value-of select="/fhir:ExampleScenario/fhir:copyright/@value" />
-																		</td>
-																	</tr>
-																</table>
-																<table class="cols">
-																	<tr>
-																		<td>
-																			<a href="versions.html#maturity">Purpose</a>
-																			:
-																			<xsl:value-of select="/fhir:ExampleScenario/fhir:purpose/@value" />
-																		</td>
-																	</tr>
-																</table>
-																<p />
-																<p />
-															</div>
-															<div>
-																<h4>
-																	<a name="Actors" />
-																	Actors
-																</h4>
-																<table class="grid">
-																	<tbody>
-																		<tr>
-																			<th>Name</th>
-																			<th>Type</th>
-																			<th>Description</th>
-																		</tr>
-																		<xsl:apply-templates select="/fhir:ExampleScenario/fhir:actor" />
-																	</tbody>
-																</table>
-																<p />
-																<p />
-															</div>
-															<div>
-																<h4>
-																	<a name="flow" />
-																	Process Flow -
-																	<xsl:value-of select="/fhir:ExampleScenario/fhir:process/fhir:description/@value" />
-																</h4>
-																<xsl:apply-templates select="/fhir:ExampleScenario/fhir:process" />
-															</div>
-														</div>
-
+		<div>
+			<!-- <h3><a name="description" />Description</h3> -->
+			<div>
+				<table class="table-bordered" style="width:100%">
+					<tr>
+						<td style="width:25%">Publisher: 
+							<xsl:value-of select="/fhir:ExampleScenario/fhir:publisher/@value" />
+						</td>
+						<td style="width:25%"><a href="versions.html#maturity">Status</a>
+							:
+							<xsl:value-of select="/fhir:ExampleScenario/fhir:status/@value" />
+						</td>
+						<td style="width:25%">
+							<a href="versions.html#maturity">Experimental</a>
+							:
+							<xsl:value-of select="/fhir:ExampleScenario/fhir:experimental/@value" />
+						</td>
+						<td style="width:25%">
+							<a href="versions.html#maturity">Copyright</a>
+							:
+							<xsl:value-of select="/fhir:ExampleScenario/fhir:copyright/@value" />
+						</td>
+					</tr>
+				</table>
+				<table class="table-bordered"  style="width:100%">
+					<tr>
+						<td>
+							<a href="versions.html#maturity">Purpose</a>
+							:
+							<xsl:value-of select="/fhir:ExampleScenario/fhir:purpose/@value" />
+						</td>
+					</tr>
+				</table>
+				<p />
+				<p />
+			</div>
+			<div>
+				<h4>
+					<a name="Actors" />Actors</h4>
+				<div style="min-width:400px">
+				<table class="grid" style="width:100%">
+					<tbody>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+						<xsl:apply-templates select="/fhir:ExampleScenario/fhir:actor" />
+					</tbody>
+				</table> 
+				</div>
+				<p />
+				<p />
+			</div>
+			<div>
+				<h4>
+					<a name="flow" />
+					Process Flow -
+					<xsl:value-of select="/fhir:ExampleScenario/fhir:process/fhir:description/@value" />
+				</h4>
+				<xsl:apply-templates select="/fhir:ExampleScenario/fhir:process" /> 
+			</div>
+		</div>
 
 	</xsl:template>
 
@@ -81,7 +75,11 @@
 		<tr>
 			<td>
 				<b>
-					<xsl:value-of select="fhir:name/@value" />
+<!--					<xsl:value-of select="fhir:name/@value" /> -->
+					<xsl:call-template name="replace-linebreaks">
+					  <xsl:with-param name="text" select="fhir:name/@value"/>
+					  <xsl:with-param name="replace" select="'\n'"/>
+					</xsl:call-template>
 				</b>
 			</td>
 			<td>
@@ -97,31 +95,26 @@
 	<xsl:template match="/fhir:ExampleScenario/fhir:process">
 		<!--		<h4><xsl:value-of select="title/@value"/></h4> <br/>  -->
 		<div class="container">
-					<!-- Áreas -->
-					<div>
-						<div>Main Flow</div>
-						<!-- /Área -->
-  <table class="cols">
-    <tbody>
-      <tr>
-        <th>Step</th>
-        <th>Description</th>
-        <th>Operation</th>
-        <th>Request</th>
-        <th>Response</th>
-        <th>z</th>
-        <th>x</th>
-        <th>x</th>
-        <th>x</th>
-      </tr>
-
-									<xsl:apply-templates select="fhir:step" />
-					
-    </tbody>
-  </table>
-
-					</div>
-				</div>
+			<!-- Áreas -->
+			<div>
+				<div>Main Flow</div>
+				<!-- /Área -->
+				<table class="table-striped table-bordered" style="width:100%">
+					<tbody>
+					<tr>
+						<th>Step</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Initiator</th>
+						<th>Receiver</th>
+						<th>Request</th>
+						<th>Response</th>
+					</tr>
+					<xsl:apply-templates select="fhir:step" /> 
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</xsl:template>
 
 
@@ -132,36 +125,40 @@
 
 
 	<xsl:template match="fhir:step">
-		<!-- Each Step -->
       <tr>
-				<a href="#{position()}" />
-				<xsl:apply-templates select="./fhir:operation" />
+		<a href="#{position()}" />
+		<xsl:apply-templates select="./fhir:operation" />
 	  </tr>
 	</xsl:template>
 
 	<xsl:template match="fhir:operation">
 		<td>
-		<a name="p2">
-			<xsl:value-of select="fhir:number/@value" />
-		<xsl:value-of select="fhir:name/@value" />
-		</a>
+			<a name="p2">
+				<xsl:value-of select="fhir:number/@value" />
+			</a>
 		</td>
 		<td>
-		<xsl:value-of select="fhir:description/@value" />
+			<xsl:value-of select="fhir:name/@value" />
 		</td>
 		<td>
-		RQ:<xsl:apply-templates select="./fhir:request" />
-		
+			<xsl:value-of select="fhir:description/@value" />
+		</td>
+
+		<td>
+			<xsl:value-of select="../fhir:initiator/@value" />
 		</td>
 		<td>
-		RP:<xsl:apply-templates select="./fhir:response" />
+			<xsl:value-of select="../fhir:receiver/@value" />
+		</td>
+		<td>
+			<xsl:apply-templates select="./fhir:request" />
+		</td>
+		<td>
+			<xsl:apply-templates select="./fhir:response" />
 		</td>
 	</xsl:template>
 
-	
-	
-	
-	
+
 	<xsl:template match="alternative">
 		<a name="p2">
 			Alternative:
@@ -197,25 +194,12 @@
 	<xsl:template match="pause">(pause)</xsl:template>
 
 	<xsl:template match="fhir:request">
-		<b>Request</b>
-		(
-		<xsl:value-of select="../fhir:receiver/@value" />
-		-
-		<xsl:value-of select="../fhir:initiator/@value" />
-		):
 		<xsl:apply-templates select="./fhir:resourceId" />
-		<br/>
+
 	</xsl:template>
 
 	<xsl:template match="fhir:response">
-		<b>Response</b>
-		(
-		<xsl:value-of select="../fhir:receiver/@value" />
-		-
-		<xsl:value-of select="../fhir:initiator/@value" />
-		):
 		<xsl:apply-templates select="./fhir:resourceId" />
-		<br/>
 	</xsl:template>
 	<xsl:template match="fhir:resourceId">
 		<xsl:variable name="iid" select="./@value" />
@@ -224,69 +208,27 @@
 		</a>
 	</xsl:template>
 
-	<xsl:template match="fhir:resourceType">
-		<p />
-		<xsl:variable name="thisResourceType" select="./@value" />
-		<h4>
-			<xsl:value-of select="$thisResourceType" />
-		</h4>
-		<table class="grid">
-			<tbody>
-				<tr>
-					<th>Artifact</th>
-					<th>Version</th>
-					<th>Description</th>
-					<th>Created by step</th>
-					<th>Creating actor</th>
-				</tr>
-				<xsl:apply-templates select="../../fhir:instance[fhir:resourceType/@value=$thisResourceType]" />
-			</tbody>
-		</table>
-	</xsl:template>
 
-	<xsl:template match="fhir:instance">
-	
-		<xsl:variable name="thisResourceId" select="./fhir:resourceId/@value" />
-		<xsl:variable name="versions" select="count(./fhir:version)" />
-
-		<tr >
-			<td rowspan="{$versions+1}">
-				<a name="{resourceId/@value}" href="../fhir:examples/{resourceId/@value}">
-					<b>
-						<xsl:value-of select="fhir:name/@value" />
-					</b>
-				</a>
-			</td>
-
-			<td>
-(<xsl:value-of select="$versions"/>)
-			</td>
-			<td>
-				<b><xsl:value-of select="fhir:description/@value" /></b>
-			</td>
-			<td  colspan="3">
-						
-			</td>		
-		</tr>		
-	        <xsl:apply-templates select="./fhir:version" />		
-		
+	<xsl:template name="linebreak">
 
 	</xsl:template>
-	
 
-	<xsl:template match="fhir:version">
-
-		<tr>
-			<td>
-		<xsl:value-of select="fhir:versionId/@value" />
-			</td>
-			<td>
-		<xsl:value-of select="fhir:description/@value" />
-			</td>
-		</tr>
-
-	</xsl:template>
-			
-
+	<xsl:template name="replace-linebreaks">
+    <xsl:param name="text"/>
+    <xsl:param name="replace" select="'\n'"/>
+    <xsl:choose>
+      <xsl:when test="contains($text,$replace)">
+        <xsl:value-of select="substring-before($text,$replace)"/>
+        <xsl:call-template name="linebreak" />
+        <xsl:call-template name="replace-linebreaks">
+          <xsl:with-param name="text" select="substring-after($text,$replace)"/>
+          <xsl:with-param name="replace" select="$replace"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 	
 </xsl:stylesheet>

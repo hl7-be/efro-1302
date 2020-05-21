@@ -20,9 +20,11 @@
   <a name="root"> </a>
   <h2 id="root">ExampleScenario: {{[title]}}</h2>
 
-  {%include ExampleScenario-{{[id]}}.xhtml%} 
+  {% include ExampleScenario-{{[id]}}.xhtml %} 
   <br/>
-  <img alt="Scenario diagram" src="ExampleScenario-{{[id]}}.svg"/>
+<!--  <img alt="Scenario diagram" src="ExampleScenario-{{[id]}}.svg"/> -->
+  <object type="image/svg+xml" data="ExampleScenario-{{[id]}}.svg"></object>
+  
   
   <a name="root"> </a>
 {% assign includetabscripts = 'true' %}
