@@ -18,25 +18,12 @@
 <!--
 -->
   </ul>
-  
 
   <a name="root"> </a>
   <h2 id="root">ExampleScenario: {{[title]}} - Description</h2>
 
+  {%include ExampleScenario-{{[id]}}-description.xhtml%}
   
-<!-- Option 2: Single html with the tabs already in  -->
-<!--
--->
-
-
-<!-- Option 0: hardcoding file name...
--->
-
- 
- 
   
-  <a name="root"> </a>
 {% assign includetabscripts = 'true' %}
 {% include fragment-pageend.html %}
-
-

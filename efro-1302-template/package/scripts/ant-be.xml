@@ -3,40 +3,24 @@
   <import file="ant.xml" as="base"/>
   <target name="prepareDiagramSource">
     <property name="dir.lib" value="${ig.template}/lib"/>
-    <property name="dir.scenarios" value="${dir.temp.includes}/scenarios"/>
-    <property name="dir.scenarios-input" value="${dir.temp.includes}/scenarios/input"/>
-    <property name="dir.scenarios-includes" value="${dir.temp.includes}/scenarios/includes"/>
-    <property name="dir.scenarios-images" value="${dir.temp.includes}/scenarios/images"/>
-    <mkdir dir="${dir.scenarios}"/>
+    <property name="dir.scenarios-input" value="${ig.template}/scenarios"/>
     <mkdir dir="${dir.scenarios-input}"/>
-    <mkdir dir="${dir.scenarios-includes}"/>
-    <mkdir dir="${dir.scenarios-images}"/>
     <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-input}" extension=".txt" style="${ig.scripts}/diagram.xslt"/>
   </target>
   <target name="renderDiagram" depends="prepareDiagramSource">
     <java jar="${dir.lib}/plantuml.jar" fork="true">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
-      <arg line="-tsvg -o &quot;../images&quot; &quot;${dir.scenarios-input}&quot;"/>
+      <arg line="-tsvg -o &quot;${ig.temp}&quot; &quot;${dir.scenarios-input}&quot;"/>
     </java>
   </target>
   <target name="createExampleScenarioPage" depends="renderDiagram" extensionOf="onGenerate.extend">
-    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension=".html" style="${ig.scripts}/sequence.xslt"/>
-    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension="-description.html" style="${ig.scripts}/description.xslt"/>
-    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.scenarios-includes}" extension="-resources.html" style="${ig.scripts}/resources.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.temp.includes}" extension=".xhtml" style="${ig.scripts}/sequence.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.temp.includes}" extension="-description.xhtml" style="${ig.scripts}/description.xslt"/>
+    <xslt basedir="${dir.input}/scenarios" includes="*.xml" destdir="${dir.temp.includes}" extension="-resources.xhtml" style="${ig.scripts}/resources.xslt"/>
     <fileset id="onGenerate.scenario.id" dir="${ig.root}">
-      <include name="temp/pages/_includes/scenarios/images/*.svg"/>
-      <include name="temp/pages/_includes/scenarios/includes/*.html"/>
+      <include name="temp/pages/ExampleScenario*.svg"/>
     </fileset>
     <property name="onGenerate.scenario.files" refid="onGenerate.scenario.id"/>
-	<echo message = "===========================================" />
-	<echo> ${dir.scenarios} </echo>
-	<echo> ${dir.scenarios-input} </echo>
-	<echo> ${dir.scenarios-includes} </echo>
-	<echo> ${dir.scenarios-images} </echo>
-	<echo message = "===========================================" />
-	<echo> ${onGenerate.scenario.files} </echo>
-	<echo message = "===========================================" />
-	
     <appendArtifacts files="${onGenerate.scenario.files}"/>
   </target>
 </project>
